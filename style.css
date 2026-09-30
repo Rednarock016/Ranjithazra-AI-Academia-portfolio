@@ -90,9 +90,12 @@ header ul li a {
 
 .listskill {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    padding-bottom: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    border-bottom: 1px;
+    padding-bottom: 50px;
+    max-width: 1000px;
+    max-height: 500px;
 }
 
 .item {
@@ -110,7 +113,6 @@ header ul li a {
     border-color: var(--accent-color);
 }
 
-/* Contact Form Styling ("Human Touch") */
 .form-section {
     background-color: var(--secondary-bg-color);
     border: 1px solid var(--primary-border-color);
@@ -190,6 +192,6 @@ footer {
     color: var(--primary-text-color);
     border-top: 1px solid var(--primary-border-color);
     line-height: 1.6;
-    text-align: center;
+    text-align: left;
     margin-top: 40px;
 }
