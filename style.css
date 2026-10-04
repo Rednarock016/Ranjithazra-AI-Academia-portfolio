@@ -6,13 +6,13 @@
     --accent-color: #C084FC;
     --accent-hover: #9333EA;
     --success-color: #4ADE80;
+    --submit-button-color:;
+    --text-color:#FFFFFF;
     --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
 * {
     box-sizing: border-box;
 }
-
 body {
     background-color: var(--primary-bg-color);
     color: var(--primary-text-color);
@@ -23,17 +23,14 @@ body {
     display: flex;
     flex-direction: column;
 }
-
 a {
     text-decoration: none;
     color: var(--primary-text-color);
     transition: color 0.3s ease;
 }
-
 a:hover {
     color: var(--accent-color);
 }
-
 header {
     position: fixed;
     z-index: 100;
@@ -44,7 +41,6 @@ header {
     top: 0;
     left: 0;
 }
-
 header ul {
     list-style: none;
     display: flex;
@@ -52,29 +48,24 @@ header ul {
     padding: 0;
     justify-content: center;
 }
-
 header ul li {
     padding: 0 25px;
 }
-
 header ul li a {
     font-weight: 500;
     font-size: 1.05rem;
 }
-
 .container {
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
     flex: 1;
 }
-
 .title {
     text-align: center;
     color: var(--primary-text-color);
     margin-bottom: 20px;
 }
-
 .about {
     color: var(--primary-text-color);
     padding: 30px;
@@ -83,11 +74,9 @@ header ul li a {
     border: 1px solid var(--primary-border-color);
     border-radius: 12px;
 }
-
 .skills {
     gap: 30px;
 }
-
 .listskill {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -97,7 +86,6 @@ header ul li a {
     max-width: 1000px;
     max-height: 500px;
 }
-
 .item {
     text-align: center;
     padding: 20px;
@@ -107,12 +95,10 @@ header ul li a {
     border: 1px solid var(--primary-border-color);
     transition: transform 0.2s ease, border-color 0.2s ease;
 }
-
 .item:hover {
     transform: translateY(-3px);
     border-color: var(--accent-color);
 }
-
 .form-section {
     background-color: var(--secondary-bg-color);
     border: 1px solid var(--primary-border-color);
@@ -120,44 +106,40 @@ header ul li a {
     padding: 30px;
     margin-top: 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    width: 700px;
 }
-
 .form-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 }
-
 .form-group label {
     font-weight: 600;
     margin-bottom: 8px;
     color: var(--primary-text-color);
 }
-
 .form-group input,
 .form-group textarea {
     background-color: var(--primary-bg-color);
     border: 1px solid rgba(168, 85, 247, 0.4);
     border-radius: 8px;
     padding: 12px 16px;
-    color: #FFFFFF;
+    color: var(--text-color);
     font-size: 1rem;
     font-family: inherit;
     outline: none;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: var(--accent-color);
     box-shadow: 0 0 0 3px rgba(192, 132, 252, 0.25);
 }
-
 .submit-btn {
     width: 100%;
     padding: 12px 20px;
     background-color: var(--primary-border-color);
-    color: #FFFFFF;
+    color: var(--text-color);
     border: none;
     border-radius: 8px;
     font-size: 1rem;
@@ -194,4 +176,46 @@ footer {
     line-height: 1.6;
     text-align: left;
     margin-top: 40px;
+}
+.glow-orb-cyan {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.28) 0%, rgba(6, 182, 212, 0) 70%);
+    filter: blur(60px);
+    animation: floatOrb 14s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+.glow-orb-purple {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(147, 51, 234, 0.25) 0%, rgba(147, 51, 234, 0) 70%);
+    filter: blur(70px);
+    animation: floatOrbReverse 18s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+.glow-orb-indigo {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, rgba(99, 102, 241, 0) 70%);
+    filter: blur(55px);
+    animation: floatCenter 10s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+@keyframes floatOrb {
+    0% { transform: translate(-10%, -20%) scale(1); }
+    100% { transform: translate(15%, 25%) scale(1.15); }
+}
+@keyframes floatOrbReverse {
+    0% { transform: translate(25%, 30%) scale(1.1); }
+    100% { transform: translate(-20%, -10%) scale(0.95); }
+}
+@keyframes floatCenter {
+    0% { transform: translate(-50%, -30%) scale(0.9); }
+    100% { transform: translate(-50%, -10%) scale(1.1); }
 }
