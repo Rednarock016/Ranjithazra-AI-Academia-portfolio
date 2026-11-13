@@ -6,7 +6,7 @@
     --accent-color: #C084FC;
     --accent-hover: #9333EA;
     --success-color: #4ADE80;
-    --submit-button-color:#FFFFF;
+    --submit-button-color:#FFFFFF;
     --text-color:#FFFFFF;
     --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -81,7 +81,7 @@ header ul li a {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    border-bottom: 1px;
+    border-bottom: 1px solid;
     padding-bottom: 50px;
     max-width: 1000px;
     max-height: 500px;
@@ -106,7 +106,9 @@ header ul li a {
     padding: 30px;
     margin-top: 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    width: 700px;
+    max-width: 700px;
+    width: 100%;
+    margin: 20px aut;
 }
 .form-group {
     display: flex;
@@ -156,7 +158,6 @@ header ul li a {
 .submit-btn:active {
     transform: translateY(0);
 }
-
 .success-msg {
     margin-top: 15px;
     padding: 12px;
@@ -167,7 +168,6 @@ header ul li a {
     text-align: center;
     font-weight: 500;
 }
-
 footer {
     padding: 20px 25px;
     background-color: var(--secondary-bg-color);
@@ -218,4 +218,25 @@ footer {
 @keyframes floatCenter {
     0% { transform: translate(-50%, -30%) scale(0.9); }
     100% { transform: translate(-50%, -10%) scale(1.1); }
+}
+@media(max-width: 600px){
+    header ul{flex-direction: column;}
+    .listskill {grid-template-columns: 1fr;}
+    .h1 {font-size: 32px;}
+    .title{font-size: 32px;}
+    .skills{flex-direction: column;}
+}
+.track{
+    background: #e5e7eb;
+    height: 12px;
+    border-radius: 99px;
+}
+.fill{
+    background: #4f46e5;
+    height: 100%;
+    border-radius: 99px;
+}
+#error {
+    color: #dc2626;
+    font-weight: 600;
 }
